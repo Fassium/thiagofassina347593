@@ -144,6 +144,11 @@
         <DCCReference Include="src\infra\Infra.Erros.pas"/>
         <DCCReference Include="src\autenticacao\Servico.Autenticacao.pas"/>
         <DCCReference Include="src\infra\Infra.Rotas.pas"/>
+        <DCCReference Include="src\artistas\Servico.Artistas.pas"/>
+        <DCCReference Include="src\artistas\View.Artistas.pas">
+            <Form>FrmArtistas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

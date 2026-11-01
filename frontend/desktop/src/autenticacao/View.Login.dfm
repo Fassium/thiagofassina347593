@@ -81,7 +81,7 @@ object FrmLogin: TFrmLogin
     ParentFont = False
     PasswordChar = '*'
     TabOrder = 1
-    Text = 'admin1234'
+    Text = 'admin123'
     TextHint = 'Sua senha'
   end
   object chkMostrarSenha: TCheckBox

@@ -6,6 +6,7 @@ uses
   Vcl.Themes,
   Vcl.Styles,
   System.UITypes,
+  DataSet.Serialize.Config,
   View.Login in 'src\autenticacao\View.Login.pas' {FrmLogin},
   Infra.Configuracao in 'src\infra\Infra.Configuracao.pas',
   Infra.Sessao in 'src\infra\Infra.Sessao.pas',
@@ -13,7 +14,9 @@ uses
   Infra.Requisicao in 'src\infra\Infra.Requisicao.pas',
   Infra.Erros in 'src\infra\Infra.Erros.pas',
   Servico.Autenticacao in 'src\autenticacao\Servico.Autenticacao.pas',
-  Infra.Rotas in 'src\infra\Infra.Rotas.pas';
+  Infra.Rotas in 'src\infra\Infra.Rotas.pas',
+  Servico.Artistas in 'src\artistas\Servico.Artistas.pas',
+  View.Artistas in 'src\artistas\View.Artistas.pas' {FrmArtistas};
 
 {$R *.res}
 
@@ -21,6 +24,7 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   TStyleManager.TrySetStyle('Windows10');
+  TDataSetSerializeConfig.GetInstance.Import.ImportOnlyFieldsVisible := False;
   FrmLogin := TFrmLogin.Create(nil);
   try
     if FrmLogin.ShowModal <> mrOk then

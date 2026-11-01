@@ -16,6 +16,7 @@ type
     function Put: IResponse;
     function Delete: IResponse;
     function AdicionarCorpo(const ACorpo: TJSONObject): IRequisicao;
+    function AdicionarParametro(const ANome, AValor: string): IRequisicao;
   end;
 
 implementation

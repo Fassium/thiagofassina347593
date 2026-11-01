@@ -31,7 +31,10 @@ type
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
   private
     { Private declarations }
+    FTelaAtual: TForm;
     procedure SelecionarModulo(const ATitulo: string);
+    procedure AbrirTela(const AClasse: TFormClass);
+    procedure FecharTela;
   public
     { Public declarations }
   end;
@@ -41,7 +44,7 @@ var
 
 implementation
 
-uses Infra.Sessao, Servico.Autenticacao;
+uses Infra.Sessao, Servico.Autenticacao, View.Artistas;
 
 {$R *.dfm}
 
@@ -49,6 +52,29 @@ uses Infra.Sessao, Servico.Autenticacao;
 procedure TFrmPrincipal.SelecionarModulo(const ATitulo: string);
 begin
   lblTitulo.Caption := ATitulo;
+end;
+
+// Fecha a tela atual e abre a nova dentro do cartão, sem borda, ocupando todo o espaço.
+procedure TFrmPrincipal.AbrirTela(const AClasse: TFormClass);
+begin
+
+  FecharTela;
+
+  FTelaAtual := AClasse.Create(Self);
+  FTelaAtual.Parent := pnlCartao;
+  FTelaAtual.Align := alClient;
+  FTelaAtual.Show;
+
+  lblBemVindo.Visible := False;
+
+end;
+
+procedure TFrmPrincipal.FecharTela;
+begin
+
+  FreeAndNil(FTelaAtual);
+  lblBemVindo.Visible := True;
+
 end;
 
 procedure TFrmPrincipal.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -71,16 +97,19 @@ end;
 procedure TFrmPrincipal.btnInicioClick(Sender: TObject);
 begin
   SelecionarModulo(btnInicio.Caption);
+  FecharTela;
 end;
 
 procedure TFrmPrincipal.btnArtistasClick(Sender: TObject);
 begin
   SelecionarModulo(btnArtistas.Caption);
+  AbrirTela(TFrmArtistas);
 end;
 
 procedure TFrmPrincipal.btnAlbunsClick(Sender: TObject);
 begin
   SelecionarModulo(btnAlbuns.Caption);
+  FecharTela;
 end;
 
 procedure TFrmPrincipal.lblMenuClick(Sender: TObject);

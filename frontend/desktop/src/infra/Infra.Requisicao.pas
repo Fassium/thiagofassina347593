@@ -19,6 +19,7 @@ type
     function AdicionarCorpo(const ACorpo: TJSONObject): IRequisicao;
     function RenovarTokens: Boolean;
     function Enviar(const AMetodo: TMetodoHttp): IResponse;
+    function AdicionarParametro(const ANome, AValor: string): IRequisicao;
   public
     class function Nova: IRequisicao;
   end;
@@ -34,6 +35,15 @@ begin
 
  FRequisicao.AddBody(Acorpo);
  Result := Self;
+
+end;
+
+function TRequisicao.AdicionarParametro(const ANome,
+  AValor: string): IRequisicao;
+begin
+
+  FRequisicao.AddParam(ANome, AValor);
+  Result := Self;
 
 end;
 
