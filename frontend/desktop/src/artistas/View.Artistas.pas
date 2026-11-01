@@ -19,6 +19,7 @@ type
     btnNovo: TButton;
     btnEditar: TButton;
     btnExcluir: TButton;
+    btnSair: TButton;
     dbgArtistas: TDBGrid;
     pnlPaginacao: TPanel;
     btnAnterior: TButton;
@@ -53,6 +54,7 @@ type
     procedure btnProximaClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
+    procedure btnSairClick(Sender: TObject);
   private
     { Private declarations }
     FBusca: string;
@@ -143,6 +145,13 @@ begin
 
   Inc(FPagina);
   CarregarLista;
+
+end;
+
+procedure TFrmArtistas.btnSairClick(Sender: TObject);
+begin
+
+  Close;
 
 end;
 

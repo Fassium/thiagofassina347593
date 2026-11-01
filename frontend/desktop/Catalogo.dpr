@@ -16,7 +16,8 @@ uses
   Servico.Autenticacao in 'src\autenticacao\Servico.Autenticacao.pas',
   Infra.Rotas in 'src\infra\Infra.Rotas.pas',
   Servico.Artistas in 'src\artistas\Servico.Artistas.pas',
-  View.Artistas in 'src\artistas\View.Artistas.pas' {FrmArtistas};
+  View.Artistas in 'src\artistas\View.Artistas.pas' {FrmArtistas},
+  View.Albuns in 'src\albuns\View.Albuns.pas' {FrmAlbuns};
 
 {$R *.res}
 

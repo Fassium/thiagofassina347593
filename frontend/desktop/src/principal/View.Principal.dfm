@@ -206,42 +206,55 @@ object FrmPrincipal: TFrmPrincipal
     Align = alClient
     BevelOuter = bvNone
     Color = 15393500
-    Padding.Left = 24
-    Padding.Top = 24
-    Padding.Right = 24
-    Padding.Bottom = 24
     ParentBackground = False
     ShowCaption = False
     TabOrder = 2
     StyleElements = [seFont, seBorder]
     ExplicitWidth = 766
     ExplicitHeight = 665
-    object pnlCartao: TPanel
-      Left = 24
-      Top = 24
-      Width = 720
-      Height = 625
+    object pgcTelas: TPageControl
+      Left = 0
+      Top = 0
+      Width = 768
+      Height = 673
+      ActivePage = tabInicio
       Align = alClient
-      BevelOuter = bvNone
-      Color = 15920617
-      ParentBackground = False
-      ShowCaption = False
       TabOrder = 0
-      StyleElements = [seFont, seBorder]
-      ExplicitWidth = 718
-      ExplicitHeight = 617
-      object lblBemVindo: TLabel
-        Left = 32
-        Top = 32
-        Width = 260
-        Height = 25
-        Caption = 'Selecione uma op'#231#227'o no menu'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clGrayText
-        Font.Height = -19
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
+      OnChange = pgcTelasChange
+      object tabInicio: TTabSheet
+        Caption = 'In'#237'cio'
+        object pnlCartao: TPanel
+          Left = 0
+          Top = 0
+          Width = 768
+          Height = 673
+          Margins.Left = 24
+          Margins.Top = 24
+          Margins.Right = 24
+          Margins.Bottom = 24
+          Align = alClient
+          BevelOuter = bvNone
+          Color = 15920617
+          ParentBackground = False
+          ShowCaption = False
+          TabOrder = 0
+          StyleElements = [seFont, seBorder]
+          ExplicitWidth = 766
+          ExplicitHeight = 665
+          object lblBemVindo: TLabel
+            Left = 32
+            Top = 32
+            Width = 260
+            Height = 25
+            Caption = 'Selecione uma op'#231#227'o no menu'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clGrayText
+            Font.Height = -19
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            ParentFont = False
+          end
+        end
       end
     end
   end

@@ -67,25 +67,25 @@ object FrmArtistas: TFrmArtistas
             OnKeyPress = edtBuscaKeyPress
             Left = 0
             Top = 8
-            Width = 200
+            Width = 160
             Height = 23
             TabOrder = 0
             TextHint = 'Buscar por nome'
           end
           object btnBuscar: TButton
             OnClick = btnBuscarClick
-            Left = 206
+            Left = 166
             Top = 7
-            Width = 90
+            Width = 80
             Height = 25
             Caption = 'Buscar'
             TabOrder = 1
           end
           object btnNovo: TButton
             OnClick = btnNovoClick
-            Left = 326
+            Left = 276
             Top = 7
-            Width = 90
+            Width = 80
             Height = 25
             Anchors = [akTop, akRight]
             Caption = 'Novo'
@@ -93,9 +93,9 @@ object FrmArtistas: TFrmArtistas
           end
           object btnEditar: TButton
             OnClick = btnEditarClick
-            Left = 422
+            Left = 360
             Top = 7
-            Width = 90
+            Width = 80
             Height = 25
             Anchors = [akTop, akRight]
             Caption = 'Editar'
@@ -103,13 +103,23 @@ object FrmArtistas: TFrmArtistas
           end
           object btnExcluir: TButton
             OnClick = btnExcluirClick
-            Left = 518
+            Left = 444
             Top = 7
-            Width = 90
+            Width = 80
             Height = 25
             Anchors = [akTop, akRight]
             Caption = 'Excluir'
             TabOrder = 4
+          end
+          object btnSair: TButton
+            Left = 528
+            Top = 7
+            Width = 80
+            Height = 25
+            Anchors = [akTop, akRight]
+            Caption = 'Sair'
+            TabOrder = 5
+            OnClick = btnSairClick
           end
         end
         object dbgArtistas: TDBGrid

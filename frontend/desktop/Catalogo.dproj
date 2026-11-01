@@ -149,6 +149,10 @@
             <Form>FrmArtistas</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="src\albuns\View.Albuns.pas">
+            <Form>FrmAlbuns</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
