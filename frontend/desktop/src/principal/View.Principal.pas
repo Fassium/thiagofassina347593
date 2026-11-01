@@ -27,6 +27,8 @@ type
     procedure btnArtistasClick(Sender: TObject);
     procedure btnAlbunsClick(Sender: TObject);
     procedure btnSairClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
   private
     { Private declarations }
     procedure SelecionarModulo(const ATitulo: string);
@@ -39,6 +41,8 @@ var
 
 implementation
 
+uses Infra.Sessao, Servico.Autenticacao;
+
 {$R *.dfm}
 
 // Mostra o nome do módulo ativo na barra do topo, ao lado do menu.
@@ -47,9 +51,21 @@ begin
   lblTitulo.Caption := ATitulo;
 end;
 
+procedure TFrmPrincipal.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  if TSessao.Ativa then
+    TServicoAutenticacao.Sair;
+end;
+
+procedure TFrmPrincipal.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+begin
+  CanClose := MessageDlg('Deseja sair do sistema?', mtConfirmation, [mbYes, mbNo], 0) = mrYes;
+end;
+
 procedure TFrmPrincipal.FormCreate(Sender: TObject);
 begin
   btnInicio.Click;
+  lblUsuario.Caption := TSessao.Email;
 end;
 
 procedure TFrmPrincipal.btnInicioClick(Sender: TObject);
@@ -74,8 +90,7 @@ end;
 
 procedure TFrmPrincipal.btnSairClick(Sender: TObject);
 begin
-  if MessageDlg('Deseja sair do sistema?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
-    Close;
+  Close;
 end;
 
 end.

@@ -6,12 +6,13 @@ type
   TServicoAutenticacao = class
   public
     class procedure Entrar(const AEmail, ASenha: string); static;
+    class procedure Sair; static;
   end;
 
 implementation
 
 uses
-  System.JSON, Infra.Requisicao.Intf, Infra.Requisicao, Infra.Sessao;
+  System.JSON, Infra.Requisicao.Intf, Infra.Requisicao, Infra.Sessao, Infra.Rotas;
 
 { TServicoAutenticacao }
 
@@ -27,7 +28,7 @@ begin
   LCorpo.AddPair('senha', ASenha);
 
   LResposta := TRequisicao.Nova
-    .Recurso('/v1/autenticacao/login')
+    .Recurso(Infra.Rotas.TRotas.Login)
     .AdicionarCorpo(LCorpo)
     .Post;
 
@@ -36,6 +37,25 @@ begin
     AEmail,
     LTokens.GetValue<string>('accessToken'),
     LTokens.GetValue<string>('refreshToken'));
+
+end;
+
+class procedure TServicoAutenticacao.Sair;
+var
+  LCorpo : TJSONObject;
+begin
+
+  LCorpo := TJSONObject.Create;
+  LCorpo.AddPair('refreshToken', TSessao.RefreshToken);
+
+  try
+    TRequisicao.Nova
+    .Recurso(Infra.Rotas.TRotas.Logout)
+    .AdicionarCorpo(LCorpo)
+    .Post;
+  finally
+    TSessao.Encerrar;
+  end;
 
 end;
 

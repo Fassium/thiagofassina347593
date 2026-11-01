@@ -12,7 +12,8 @@ uses
   Infra.Requisicao.Intf in 'src\infra\Infra.Requisicao.Intf.pas',
   Infra.Requisicao in 'src\infra\Infra.Requisicao.pas',
   Infra.Erros in 'src\infra\Infra.Erros.pas',
-  Servico.Autenticacao in 'src\autenticacao\Servico.Autenticacao.pas';
+  Servico.Autenticacao in 'src\autenticacao\Servico.Autenticacao.pas',
+  Infra.Rotas in 'src\infra\Infra.Rotas.pas';
 
 {$R *.res}
 

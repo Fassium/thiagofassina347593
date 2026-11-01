@@ -25,7 +25,7 @@ type
 
 implementation
 
-uses Infra.Configuracao, Infra.Sessao, Infra.Erros;
+uses Infra.Configuracao, Infra.Sessao, Infra.Erros, Infra.Rotas;
 
 { TRequisicao }
 
@@ -134,7 +134,7 @@ begin
 
   LResposta := RESTRequest4D.TRequest.New
   .BaseURL(TConfiguracao.UrlApi)
-  .Resource('/v1/autenticacao/refresh')
+  .Resource(Infra.Rotas.TRotas.Refresh)
   .AddBody(LCorpo)
   .Put;
 

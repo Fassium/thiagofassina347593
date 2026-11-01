@@ -14,6 +14,8 @@ object FrmPrincipal: TFrmPrincipal
   Font.Style = []
   Position = poScreenCenter
   WindowState = wsMaximized
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   TextHeight = 15
   object pnlTopo: TPanel
@@ -72,16 +74,15 @@ object FrmPrincipal: TFrmPrincipal
     end
     object lblUsuario: TLabel
       AlignWithMargins = True
-      Left = 900
+      Left = 914
       Top = 0
-      Width = 92
+      Width = 78
       Height = 56
       Margins.Top = 0
       Margins.Right = 16
       Margins.Bottom = 0
       Align = alRight
       Alignment = taRightJustify
-      AutoSize = False
       Caption = 'Ol'#225', Thiago'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
@@ -91,10 +92,10 @@ object FrmPrincipal: TFrmPrincipal
       ParentFont = False
       Layout = tlCenter
       StyleElements = [seClient, seBorder]
-      ExplicitLeft = 872
+      ExplicitHeight = 21
     end
     object lblIconeUsuario: TLabel
-      Left = 869
+      Left = 883
       Top = 0
       Width = 28
       Height = 56
