@@ -17,7 +17,8 @@ uses
   Infra.Rotas in 'src\infra\Infra.Rotas.pas',
   Servico.Artistas in 'src\artistas\Servico.Artistas.pas',
   View.Artistas in 'src\artistas\View.Artistas.pas' {FrmArtistas},
-  View.Albuns in 'src\albuns\View.Albuns.pas' {FrmAlbuns};
+  View.Albuns in 'src\albuns\View.Albuns.pas' {FrmAlbuns},
+  View.Base in 'src\comum\View.Base.pas' {FrmBase};
 
 {$R *.res}
 
