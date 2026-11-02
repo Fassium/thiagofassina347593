@@ -14,7 +14,7 @@ Cliente VCL da API do catálogo. Mesmas telas do front web: login, artistas e á
 
 ## Organização (por funcionalidade)
 - `src/infra`: configuração, sessão (tokens), requisição HTTP com refresh automático e tratamento de erros da API.
-- `src/comum`: classes base compartilhadas (serviço base e telas base de cadastro).
+- `src/comum`: telas base com herança visual: `View.Base` (padrão visual de toda tela) e `View.Base.Cadastro` (lista paginada com busca, formulário e fluxo de Novo/Editar/Excluir; cada tela de cadastro herda dela e só define campos e chamadas ao seu serviço).
 - `src/autenticacao`, `src/artistas`, `src/albuns`: cada funcionalidade com o seu serviço (chama a API) e a sua tela.
 - `src/principal`: janela principal.
 

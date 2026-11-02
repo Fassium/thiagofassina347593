@@ -64,7 +64,7 @@ Camadas por funcionalidade em `backend/src/main/java/br/com/fassium/catalogoarti
 Cliente desktop, também por funcionalidade, em `frontend/desktop/src`:
 
 - `infra`: configuração, sessão (tokens), requisição HTTP com renovação automática do token e tratamento de erros da API.
-- `comum`: classes base compartilhadas (serviço base e telas base de cadastro).
+- `comum`: telas base com herança visual: `View.Base` (padrão visual de toda tela) e `View.Base.Cadastro` (lista paginada com busca, formulário e fluxo de Novo/Editar/Excluir; cada tela de cadastro herda dela e só define campos e chamadas ao seu serviço).
 - `autenticacao`, `artistas`, `albuns`: cada funcionalidade com o seu serviço (chama a API) e a sua tela. `principal`: janela principal.
 - A tela nunca fala HTTP: ela só chama o serviço da sua funcionalidade.
 
@@ -115,6 +115,8 @@ Todas as tabelas são criadas e populadas por migrações Flyway em `backend/src
 | Item | Situação |
 |---|---|
 | Estrutura do projeto, bibliotecas e estilo visual (VCL Style Windows 10) | feito |
-| Tela de login e fluxo login → janela principal | feito (validação provisória, ainda sem chamar a API) |
-| Login real, renovação de token e tratamento de erros da API | pendente |
-| Listagem, cadastro e edição de artistas e álbuns | pendente |
+| Tela de login e fluxo login → janela principal | feito |
+| Login e logout na API, renovação de token e tratamento de erros da API | feito |
+| Telas abertas em abas e telas base de cadastro (herança) | feito |
+| Artistas: listagem paginada com busca, cadastro, edição e exclusão | feito |
+| Álbuns: listagem com filtros, cadastro, edição, exclusão e vínculo com artistas | pendente |
