@@ -3,8 +3,6 @@ inherited FrmBaseCadastro: TFrmBaseCadastro
   ClientHeight = 640
   ClientWidth = 800
   OnCreate = FormCreate
-  ExplicitLeft = 3
-  ExplicitTop = 3
   ExplicitWidth = 800
   ExplicitHeight = 640
   TextHeight = 15
@@ -18,8 +16,6 @@ inherited FrmBaseCadastro: TFrmBaseCadastro
     BevelOuter = bvNone
     Caption = 'cpnCadastro'
     TabOrder = 0
-    ExplicitWidth = 640
-    ExplicitHeight = 480
     object crdLista: TCard
       Left = 0
       Top = 0
@@ -28,8 +24,6 @@ inherited FrmBaseCadastro: TFrmBaseCadastro
       Caption = 'crdLista'
       CardIndex = 0
       TabOrder = 0
-      ExplicitWidth = 640
-      ExplicitHeight = 480
       object pnlLista: TPanel
         Left = 0
         Top = 0
@@ -46,8 +40,6 @@ inherited FrmBaseCadastro: TFrmBaseCadastro
         ShowCaption = False
         TabOrder = 0
         StyleElements = [seFont, seBorder]
-        ExplicitWidth = 640
-        ExplicitHeight = 480
         object pnlFiltro: TPanel
           Left = 16
           Top = 16
@@ -91,7 +83,6 @@ inherited FrmBaseCadastro: TFrmBaseCadastro
             Caption = 'Novo'
             TabOrder = 2
             OnClick = btnNovoClick
-            ExplicitLeft = 276
           end
           object btnEditar: TButton
             Left = 520
@@ -102,7 +93,6 @@ inherited FrmBaseCadastro: TFrmBaseCadastro
             Caption = 'Editar'
             TabOrder = 3
             OnClick = btnEditarClick
-            ExplicitLeft = 360
           end
           object btnExcluir: TButton
             Left = 604
@@ -113,7 +103,6 @@ inherited FrmBaseCadastro: TFrmBaseCadastro
             Caption = 'Excluir'
             TabOrder = 4
             OnClick = btnExcluirClick
-            ExplicitLeft = 444
           end
           object btnSair: TButton
             Left = 688
@@ -124,7 +113,6 @@ inherited FrmBaseCadastro: TFrmBaseCadastro
             Caption = 'Sair'
             TabOrder = 5
             OnClick = btnSairClick
-            ExplicitLeft = 528
           end
         end
         object dbgLista: TDBGrid
@@ -156,8 +144,6 @@ inherited FrmBaseCadastro: TFrmBaseCadastro
           ShowCaption = False
           TabOrder = 2
           StyleElements = [seFont, seBorder]
-          ExplicitTop = 423
-          ExplicitWidth = 608
           object lblPagina: TLabel
             Left = 100
             Top = 12
@@ -194,7 +180,6 @@ inherited FrmBaseCadastro: TFrmBaseCadastro
       Caption = 'crdFormulario'
       CardIndex = 1
       TabOrder = 1
-      ExplicitWidth = 760
       object pnlFormulario: TPanel
         Left = 0
         Top = 0
@@ -211,7 +196,6 @@ inherited FrmBaseCadastro: TFrmBaseCadastro
         ShowCaption = False
         TabOrder = 0
         StyleElements = [seFont, seBorder]
-        ExplicitWidth = 760
         object pnlCampos: TPanel
           Left = 16
           Top = 16
@@ -224,7 +208,6 @@ inherited FrmBaseCadastro: TFrmBaseCadastro
           ShowCaption = False
           TabOrder = 0
           StyleElements = [seFont, seBorder]
-          ExplicitWidth = 728
         end
         object pnlBotoesFormulario: TPanel
           Left = 16
@@ -238,7 +221,6 @@ inherited FrmBaseCadastro: TFrmBaseCadastro
           ShowCaption = False
           TabOrder = 1
           StyleElements = [seFont, seBorder]
-          ExplicitWidth = 728
           object btnSalvar: TButton
             Left = 0
             Top = 8
