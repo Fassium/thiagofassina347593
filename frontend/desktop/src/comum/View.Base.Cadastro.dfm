@@ -52,7 +52,6 @@ inherited FrmBaseCadastro: TFrmBaseCadastro
           ShowCaption = False
           TabOrder = 0
           StyleElements = [seFont, seBorder]
-          ExplicitWidth = 608
           DesignSize = (
             768
             41)
