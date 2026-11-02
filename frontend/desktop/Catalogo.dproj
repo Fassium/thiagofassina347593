@@ -157,6 +157,10 @@
             <Form>FrmBase</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="src\comum\View.Base.Cadastro.pas">
+            <Form>FrmBaseCadastro</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

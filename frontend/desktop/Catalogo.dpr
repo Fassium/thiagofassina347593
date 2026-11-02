@@ -18,7 +18,8 @@ uses
   Servico.Artistas in 'src\artistas\Servico.Artistas.pas',
   View.Artistas in 'src\artistas\View.Artistas.pas' {FrmArtistas},
   View.Albuns in 'src\albuns\View.Albuns.pas' {FrmAlbuns},
-  View.Base in 'src\comum\View.Base.pas' {FrmBase};
+  View.Base in 'src\comum\View.Base.pas' {FrmBase},
+  View.Base.Cadastro in 'src\comum\View.Base.Cadastro.pas' {FrmBaseCadastro};
 
 {$R *.res}
 
